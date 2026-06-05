@@ -1,0 +1,31 @@
+{
+  "name": "suno-cookie-fetcher",
+  "version": "1.0.0",
+  "description": "Tự động lấy cookie Suno bằng Playwright - Hệ thống Nuôi Profile",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "daemon": "node src/daemon.js",
+    "daemon:bg": "start /B node src/daemon.js > logs/daemon.log 2>&1",
+    "test:refresh": "node src/test-refresh.js",
+    "add-account": "node src/add-account.js",
+    "set-email": "node src/set-email.js",
+    "update:all": "node src/update-all.js",
+    "fetch:all": "node src/update-all.js",
+    "list": "node src/list-accounts.js",
+    "login": "node src/index.js --mode=login",
+    "fetch": "node src/index.js --mode=fetch"
+  },
+  "keywords": ["suno", "cookie", "playwright", "automation"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "minimist": "^1.2.8",
+    "ora": "^5.4.1",
+    "table": "^6.8.1"
+  }
+}
