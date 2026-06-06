@@ -6,9 +6,9 @@
       "note": "",
       "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_1",
       "createdAt": "2026-06-05T14:10:06.277Z",
-      "lastFetchedAt": "2026-06-06T11:10:55.334Z",
+      "lastFetchedAt": "2026-06-06T13:50:02.612Z",
       "status": "active",
-      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50XzN0N3lmUDU3OGdES3ZicVU1aXFBbVMiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNDJ9.SLRbMqY0O1QIMWFIb9jbKEPAgNCXpDnUizttmhsev-pmJZtKKXAQQriR5v5xTUXtR2PtZiVCJTGTc_QvtbC7Zc7iJ01R1HUzbvFGYMjWqWNL2aCrTuZ9TYhGWjr1EZf-dRWOeJbb9bAFh5MMpsC8evdHjfLaWe6sQsdU-qAKx0dXYAIIqYsYDRpuAwZdPLjw5N7BWwSNK5t9oc-b1p53ICbiI9Y1_FkQM-96E-3ZDUd1tZFjuNu_9O4aOULUXs6Mbm7A-XrEV6Y8XuwOcNGfFY4HEjKJMxjKUDvNJ3731jHuoxMQULPQgw2wfrurk5CCPzZSoQW7AaV9cf6QTgVx4Q"
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50XzN0N3lmUDU3OGdES3ZicVU1aXFBbVMiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODk3ODl9.PS-ZQoFEzhLV_ZK2PCs1uM38KBzphEkez0t-HDRGMNFTbLgc8Gy1fNNiNBL9q3aRq1GH7mNKm_wR5xjtAw_AlUCN6pkxwOBa12EJFvdUqrVww3tIuxq41851P2aiC8RckB5UT26J-Piwxo1xBdhaicGFAqL9e1rzgiUdEoen_lDv9KD3skwfkBh4IqJAL31k2xiGiYkOI7WZjs3mmCU1c1BrBq0v1Jm1kOab4vR4WQThJgTtAN8OIlRsN8hjabLLYlkRyAqAnL_A6leCX73JeJUYBKED3foFWoaVNWs4ALp_SgovJPhb2gMoBkbwCSJGhvtpnfNVtgcCIMtSdsIVTQ"
     },
     {
       "name": "tk_2",
@@ -16,18 +16,28 @@
       "note": "",
       "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_2",
       "createdAt": "2026-06-05T14:17:52.639Z",
-      "lastFetchedAt": "2026-06-06T11:11:12.762Z",
+      "lastFetchedAt": "2026-06-06T13:50:21.509Z",
       "status": "active",
-      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X0x0b0RlQkdVaXlzdHZRbWpSSFpielkiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNTl9.s-sG8Kqjwf6bQ0_Qh8nNJOiGDQAX6fFg8JUEu6KN3YyeZvRQ5X_gRUVVvCIgerLY9LdgKkgM6JlkzqrICng3kkw4dZPtj_w7qGHUVbbcRyPqEeybE9QOGuViAIPmRiGm9AaDs9Kv0DWDqSm64-zCGsj49ssb_yeM_u6VWf1RqWWl9ZiRoqAxhU72vQJAPIwjnPPMq7MCmrQOEtdI8-kMPltuSmSdUM7PaWRwHyJF5ur_6RKNuMkc7BacvaBqRFWaOErgzZpmHYSjrRLxb0P0JDxmc2zXlZHqMDsghYixhtXo5MKZJ3A8neJI83i0yLgxTMeN8b5FBXB7jROEhz0yZg"
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X0x0b0RlQkdVaXlzdHZRbWpSSFpielkiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODk4MDh9.RhmbPNizXHCIDMKx2ogYu4hxFf9TqRb3Fm5oBID0fhtGa_Hro570f6HLs_250fHwl8Kc2oTx70sVnfbO-na_Dt_80A-31J7iGsK3Rz0AAkhYFUNrRtUdK9yKCuwME0FwYAfs23xUiaKwLTNixKf_ub9UXSu8Oj6xjQzNEikLkUSBA5CjiDtq1EPzrLTV9_WlVPzHsmGgc7V9kd7VlzK9o509pOOp9_ZFvNKmJnf6CgFDOlJcHv_A3GobuRx8m0W9cpWThqY8ufuBCQMhfvrSGWxvFzDuG8jWSiVRelyJP0jqthI2JI-wWSDbQN5EDJSn7Vs9P3eI7dgugDv75_TNjQ"
     },
     {
       "name": "tk_3",
       "email": "lanhtutoicao1977@gmail.com",
       "note": "",
-      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X3pCcWkycFkzSndkSFNpa1o3UlpKdTUiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNzZ9.RR7wNpuw-3tp4kuD9jyy0biKfchLj_pn4R-fI5fQjBbfi-wcdJ-Geg36KdGONCTDQ4sT2IKomz7RDndc2OBFVTthMJd9d-J8GW6brjcF5-Q4OTholRLuFqJjTdMN9oiPoBSL0qm7GsLBDv6aXJJeWHrbPcDyzyztwKfvfNFQcDVM_DP2tv99rS5t06x02YxlnvQX3HXCpj062NEp2LnxYpJ4QvhyTEwenUxFbWer_pRuB0j_aQpGDo7D5Z0hHcphepEiTy0uLiTlXxFZysnZI-MN8wX65zuSAb5ck5euTTpcLeK3IKy9myHbFTkRxvbQ6ukO-r7Polvy4i_KciOKpg",
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X3pCcWkycFkzSndkSFNpa1o3UlpKdTUiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODk4Mjd9.DnruHt8mRTwzXPIuC5eEdyoTBJRKgvMWQcHxAyQ9y_rnOEnFSl9I4IsjIgN8GXQRWMI66B1iifgehP7kbeKfL8jOUFnyaPr3RlDI4jIA8fVZiezw-FGsY6TnNBS4--01YZXaj4v20A0cK2S3_eD3gFxL36G7u4lUlhXFpop1ek_g8bE8juSKx6IzrnkztFUUBrOytnvPOpnKLf3qpXa5oZ2xuo7cYPfNf_rpDfWVZ-eDEucA66UidTUcRIgw9StaP8exWEpfS0LJjbl1_7YvwKP5dGaUQQMF9KkI_rOp_9pLkzC6ub738_D5K5Vk9d6oXYpV5rHddXR3Fpjn6Zl1aw",
       "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_3",
       "createdAt": "2026-06-06T09:15:41.816Z",
-      "lastFetchedAt": "2026-06-06T11:11:29.691Z",
+      "lastFetchedAt": "2026-06-06T13:50:40.690Z",
+      "status": "active"
+    },
+    {
+      "name": "tk_4",
+      "email": "minhdanutc@gmail.com",
+      "note": "",
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X0o2YjdpNzlkU1hTTG52cjU2Y1NKbVkiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyOTAyNzR9.tBVuhrbFzStCyFrgkw2t5vF16PPOJmVi_A8uc1nKm3QTJVUfZx5PsERy359MlQsORLPi7Y0hZLKaOWqMxA9cNTUsJrVU88hJhhuaY_QmfX9vRa9U-sRfvBkkLs3Ph5wu1NkOAJ4Dgutbt_cePf49F_SGvnvIz4YMDms_RVeGXiNU8Qjq64a50D26aGTb-EsXKcztOXg8wYfh7H6kNN14YOhpSEhwoqIlQ_y0vyX2fykDrKzTANV0t-CSWHX9v5hBV4eYHxPcthWcgEeoQ9WKJ6R_COk8yMFaJ0pK38F-RkczapxKIIacnSljnBzv3-17lP5X7uB4QWaBAZlb6o-KPg",
+      "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_4",
+      "createdAt": "2026-06-06T13:55:30.696Z",
+      "lastFetchedAt": "2026-06-06T13:58:08.945Z",
       "status": "active"
     }
   ]

@@ -1,6 +1,7 @@
 'use strict';
 
-const { launchBrowser, closeBrowser, SUNO_URL } = require('./browser');
+const { launchBrowser, launchBrowserFromState, saveStorageState, closeBrowser, SUNO_URL, PROFILES_DIR, STATES_DIR } = require('./browser');
+const fs = require('fs-extra');
 
 const PAGE_TIMEOUT = parseInt(process.env.PAGE_TIMEOUT || '60000', 10);
 const NETWORK_IDLE_TIMEOUT = parseInt(process.env.NETWORK_IDLE_TIMEOUT || '10000', 10);
@@ -114,7 +115,25 @@ async function extractVersionFromPage(page) {
  * @returns {Promise<object>} - Cookie data
  */
 async function fetchCookiesForAccount(profileName, headless = true) {
-  const { context, page } = await launchBrowser(profileName, headless);
+  // Tự động chọn mode: Profile (nặng, chính xác) vs StorageState (nhẹ, cross-platform)
+  const profileDir = require('path').join(PROFILES_DIR, profileName);
+  const stateFile = require('path').join(STATES_DIR, `${profileName}.json`);
+  const hasProfile = await fs.pathExists(profileDir);
+  const hasState = await fs.pathExists(stateFile);
+
+  let context, page, browser = null;
+
+  if (hasProfile) {
+    // Mode 1: Persistent Profile (máy Windows có sẵn Profile)
+    console.log('  📁 Mode: Persistent Profile');
+    ({ context, page } = await launchBrowser(profileName, headless));
+  } else if (hasState) {
+    // Mode 2: Storage State (file JSON 10KB - cross-platform)
+    console.log('  📄 Mode: Storage State (cross-platform)');
+    ({ context, page, browser } = await launchBrowserFromState(profileName, headless));
+  } else {
+    throw new Error(`Không tìm thấy Profile hoặc Storage State cho "${profileName}". Hãy chạy "npm run add-account" trước!`);
+  }
 
   // Cài bộ lắng nghe mạng TRƯỚC khi mở trang
   const networkData = setupNetworkInterception(page);
@@ -182,6 +201,11 @@ async function fetchCookiesForAccount(profileName, headless = true) {
       .map((c) => `${c.name}=${c.value}`)
       .join('; ');
 
+    // ✅ Luôn lưu Storage State sau khi fetch thành công (cho lần sau dùng)
+    if (sessionCookie) {
+      await saveStorageState(context, profileName);
+    }
+
     const result = {
       profileName,
       fetchedAt: new Date().toISOString(),
@@ -197,12 +221,14 @@ async function fetchCookiesForAccount(profileName, headless = true) {
 
     return result;
   } finally {
-    await closeBrowser(context);
+    await closeBrowser(context, browser);
   }
 }
 
 /**
  * Mở trình duyệt để người dùng đăng nhập thủ công
+ * Dùng trình duyệt nhẹ (KHÔNG tạo thư mục Profile nặng 100MB+)
+ * Chỉ lưu file states/*.json (~10KB)
  * @param {string} profileName
  * @returns {Promise<object>} - Cookie sau khi login
  */
@@ -213,7 +239,8 @@ async function manualLoginAndFetch(profileName) {
   console.log('   2. Đảm bảo bạn thấy giao diện tạo nhạc');
   console.log('   3. Sau đó quay lại đây và nhấn ENTER\n');
 
-  const { context, page } = await launchBrowser(profileName, false);
+  // Dùng trình duyệt nhẹ (không tạo Profile nặng)
+  const { context, page, browser } = await launchBrowserFromState(profileName, false);
   const networkData = setupNetworkInterception(page);
 
   try {
@@ -263,6 +290,12 @@ async function manualLoginAndFetch(profileName) {
       .map((c) => `${c.name}=${c.value}`)
       .join('; ');
 
+    // ✅ Lưu Storage State sau khi login (file 10KB, dùng cho VPS)
+    if (sessionCookie) {
+      await saveStorageState(context, profileName);
+      console.log('  📦 Storage State đã sẵn sàng để copy lên VPS!');
+    }
+
     return {
       profileName,
       fetchedAt: new Date().toISOString(),
@@ -277,7 +310,7 @@ async function manualLoginAndFetch(profileName) {
     };
 
   } finally {
-    await closeBrowser(context);
+    await closeBrowser(context, browser);
   }
 }
 

@@ -1,5 +1,7 @@
 profiles/
+states/
 output/
+accounts.json
 node_modules/
 .env.local
 *.log
