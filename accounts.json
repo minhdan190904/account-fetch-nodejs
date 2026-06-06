@@ -6,9 +6,9 @@
       "note": "",
       "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_1",
       "createdAt": "2026-06-05T14:10:06.277Z",
-      "lastFetchedAt": "2026-06-05T15:39:35.094Z",
+      "lastFetchedAt": "2026-06-06T11:10:55.334Z",
       "status": "active",
-      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50XzN0N3lmUDU3OGdES3ZicVU1aXFBbVMiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyMDk5NjF9.uFDl6HAeuGbxlgN2_DgxvmY-v2ZCgCJcLqFdBh7wHlrNZWkmjY7Ta6cG5qos0g85GM8ddJc2oRZfzcs-lmItKON_2EcplF9fmAl6po0ozTILV1AQUfYEwNxPTBxn-nPUe1ldVtlsbvMtzrruvnAMEvB9SA_uklOikzzqaaX8Atqc8imzsMW5ElouMzbepg_y_8nW1lcryQur50cN0rDZB8NSjB0qm0STvhEy4BpF_2x6C2lhh9FZoWnUKnG6i2JyAw_jwxxCPtUkuqXTZqizMdjvAtgtQdBoI3xdr7U7ITAhEQsHUp_hczBLwWUbbp0XXU6_oNiKhQ7cBEv3L-kGBA"
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50XzN0N3lmUDU3OGdES3ZicVU1aXFBbVMiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNDJ9.SLRbMqY0O1QIMWFIb9jbKEPAgNCXpDnUizttmhsev-pmJZtKKXAQQriR5v5xTUXtR2PtZiVCJTGTc_QvtbC7Zc7iJ01R1HUzbvFGYMjWqWNL2aCrTuZ9TYhGWjr1EZf-dRWOeJbb9bAFh5MMpsC8evdHjfLaWe6sQsdU-qAKx0dXYAIIqYsYDRpuAwZdPLjw5N7BWwSNK5t9oc-b1p53ICbiI9Y1_FkQM-96E-3ZDUd1tZFjuNu_9O4aOULUXs6Mbm7A-XrEV6Y8XuwOcNGfFY4HEjKJMxjKUDvNJ3731jHuoxMQULPQgw2wfrurk5CCPzZSoQW7AaV9cf6QTgVx4Q"
     },
     {
       "name": "tk_2",
@@ -16,9 +16,19 @@
       "note": "",
       "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_2",
       "createdAt": "2026-06-05T14:17:52.639Z",
-      "lastFetchedAt": "2026-06-05T15:39:51.655Z",
+      "lastFetchedAt": "2026-06-06T11:11:12.762Z",
       "status": "active",
-      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X0x0b0RlQkdVaXlzdHZRbWpSSFpielkiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyMDk5Nzh9.ZB5KCxOA9VU8m5jzoo8KmX6_hz5y-0s8h2bW1OjOij_9kTAvI8NDVIgFcsqnaXijGAtWHiG4JePoCxbN0cxCL_Ko9Kckc9-krhXrmtk8fMm9b_qMCo4vWG2_TcfoUy1N9Y7UzqtOAUEQTITWAFKVjhwtVyTgSfB05HDWZelf1QA97FnSJ49fs5H3NvVEGfPJyGWDENVmrdycy1xzq7_mAK-Ml8dXlyN1P5R6LycfddudFRgNuPt1qo2OUztM0eMEJ3vJYh5yF1teH5ENwHdRf2xku_89km5RPBk01vKTy_MBJmakxowfaElWiAbLnDHbPQ-0HfQV9Lrym_DvT7zFIQ"
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X0x0b0RlQkdVaXlzdHZRbWpSSFpielkiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNTl9.s-sG8Kqjwf6bQ0_Qh8nNJOiGDQAX6fFg8JUEu6KN3YyeZvRQ5X_gRUVVvCIgerLY9LdgKkgM6JlkzqrICng3kkw4dZPtj_w7qGHUVbbcRyPqEeybE9QOGuViAIPmRiGm9AaDs9Kv0DWDqSm64-zCGsj49ssb_yeM_u6VWf1RqWWl9ZiRoqAxhU72vQJAPIwjnPPMq7MCmrQOEtdI8-kMPltuSmSdUM7PaWRwHyJF5ur_6RKNuMkc7BacvaBqRFWaOErgzZpmHYSjrRLxb0P0JDxmc2zXlZHqMDsghYixhtXo5MKZJ3A8neJI83i0yLgxTMeN8b5FBXB7jROEhz0yZg"
+    },
+    {
+      "name": "tk_3",
+      "email": "lanhtutoicao1977@gmail.com",
+      "note": "",
+      "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InN1bm8tYXBpLXJzMjU2LWtleS0xIiwidHlwIjoiSldUIn0.eyJzdW5vLmNvbS9jbGFpbXMvY2xpZW50X2lkIjoiY2xpZW50X3pCcWkycFkzSndkSFNpa1o3UlpKdTUiLCJzdW5vLmNvbS9jbGFpbXMvdG9rZW5fdHlwZSI6InJlZnJlc2giLCJpc3MiOiJodHRwczovL2F1dGguc3Vuby5jb20iLCJleHAiOjE4MTIyODAyNzZ9.RR7wNpuw-3tp4kuD9jyy0biKfchLj_pn4R-fI5fQjBbfi-wcdJ-Geg36KdGONCTDQ4sT2IKomz7RDndc2OBFVTthMJd9d-J8GW6brjcF5-Q4OTholRLuFqJjTdMN9oiPoBSL0qm7GsLBDv6aXJJeWHrbPcDyzyztwKfvfNFQcDVM_DP2tv99rS5t06x02YxlnvQX3HXCpj062NEp2LnxYpJ4QvhyTEwenUxFbWer_pRuB0j_aQpGDo7D5Z0hHcphepEiTy0uLiTlXxFZysnZI-MN8wX65zuSAb5ck5euTTpcLeK3IKy9myHbFTkRxvbQ6ukO-r7Polvy4i_KciOKpg",
+      "profileDir": "D:\\ProjectSunoAIApp\\account-fetch-nodejs\\profiles\\tk_3",
+      "createdAt": "2026-06-06T09:15:41.816Z",
+      "lastFetchedAt": "2026-06-06T11:11:29.691Z",
+      "status": "active"
     }
   ]
 }

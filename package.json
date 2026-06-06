@@ -4,17 +4,14 @@
   "description": "Tự động lấy cookie Suno bằng Playwright - Hệ thống Nuôi Profile",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "daemon": "node src/daemon.js",
-    "daemon:bg": "start /B node src/daemon.js > logs/daemon.log 2>&1",
-    "test:refresh": "node src/test-refresh.js",
+    "start": "node src/scheduler.js",
+    "scheduler": "node src/scheduler.js",
+    "scheduler:bg": "start /B node src/scheduler.js > logs/scheduler.log 2>&1",
     "add-account": "node src/add-account.js",
     "set-email": "node src/set-email.js",
     "update:all": "node src/update-all.js",
     "fetch:all": "node src/update-all.js",
-    "list": "node src/list-accounts.js",
-    "login": "node src/index.js --mode=login",
-    "fetch": "node src/index.js --mode=fetch"
+    "list": "node src/list-accounts.js"
   },
   "keywords": ["suno", "cookie", "playwright", "automation"],
   "author": "",

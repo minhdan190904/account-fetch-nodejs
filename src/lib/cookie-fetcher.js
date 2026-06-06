@@ -250,20 +250,32 @@ async function manualLoginAndFetch(profileName) {
     const cookieMap = {};
     allCookies.forEach((c) => { cookieMap[c.name] = c.value; });
 
-    const clientCookie = allCookies.find((c) => c.name === '__client' || c.name === '__client_Jnxw-muT');
+    const sessionCookie = allCookies.find((c) => c.name === '__session');
+    const clientCookie  = allCookies.find((c) => c.name === '__client' || c.name === '__client_Jnxw-muT');
+
+    let clientApiVersion = networkData.clientApiVersion;
+    if (!clientApiVersion) {
+      clientApiVersion = await extractVersionFromPage(page);
+    }
+
+    const cookieString = allCookies
+      .filter((c) => IMPORTANT_COOKIES.includes(c.name) || c.domain.includes('suno.com'))
+      .map((c) => `${c.name}=${c.value}`)
+      .join('; ');
 
     return {
       profileName,
       fetchedAt: new Date().toISOString(),
       isLoggedIn: !!sessionCookie,
       session: sessionCookie?.value || null,
-      clientToken: clientCookie?.value || null,  // __client - Refresh Token (sống 1 năm)
+      clientToken: clientCookie?.value || null,
       clientApiVersion: clientApiVersion || 'unknown',
       clerkSessionToken: networkData.clerkSessionToken || null,
       cookieString,
       allCookies: cookieMap,
       capturedApiHeaders: networkData.sunoApiHeaders,
     };
+
   } finally {
     await closeBrowser(context);
   }
