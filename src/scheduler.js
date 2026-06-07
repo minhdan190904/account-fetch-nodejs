@@ -2,14 +2,14 @@
 
 /**
  * ════════════════════════════════════════════════════════
- *  scheduler.js - Tự động fetch cookie mỗi 50 phút
+ *  scheduler.js - Tự động fetch cookie mỗi 45 phút
  * ════════════════════════════════════════════════════════
  *
  *  Cách hoạt động:
  *   - Mở Chrome (Playwright) cho từng tài khoản
  *   - Lấy __session cookie mới (token sống 60 phút)
- *   - Push vào Spring Boot DB
- *   - Lặp lại mỗi 50 phút → luôn có token còn ~10 phút đệm
+ *   - Push vào Spring Boot DB kèm credits
+ *   - Lặp lại mỗi 45 phút → luôn có token còn ~15 phút đệm
  *
  *  Cách chạy:
  *   npm run scheduler        (chạy foreground)
@@ -25,8 +25,8 @@ const { pushCookieToSpringBoot } = require('./lib/spring-push');
 const { sendTelegram, buildSummaryMessage } = require('./lib/telegram');
 
 // ─── Cấu hình ───────────────────────────────────────────
-// Token sống 60 phút → fetch lại sau 50 phút (đệm 10 phút)
-const INTERVAL_MINUTES = 50;
+// Token sống 60 phút → fetch lại sau 45 phút (đệm 15 phút)
+const INTERVAL_MINUTES = 45;
 const INTERVAL_MS      = INTERVAL_MINUTES * 60 * 1000;
 const HEADLESS         = process.env.HEADLESS !== 'false';
 // ────────────────────────────────────────────────────────
@@ -83,12 +83,13 @@ async function fetchAndPushOne(account) {
       console.log(chalk.green(`  ✅ ${name}: lấy cookie thành công`));
     }
 
-    // Push lên Spring Boot
+    // Push lên Spring Boot (kèm credits nếu lấy được)
     if (email) {
       const cookieToSend = cookieData.cookieString || cookieData.session;
-      const springOk = await pushCookieToSpringBoot(email, cookieToSend);
+      const springOk = await pushCookieToSpringBoot(email, cookieToSend, cookieData.creditsLeft);
       result.springBootUpdated = springOk;
-      console.log(chalk.green(`     Spring Boot: ${springOk ? '✅ OK' : '❌ Lỗi'}`));
+      const creditsInfo = cookieData.creditsLeft !== null ? ` (${cookieData.creditsLeft} credits)` : '';
+      console.log(chalk.green(`     Spring Boot: ${springOk ? '✅ OK' : '❌ Lỗi'}${creditsInfo}`));
     } else {
       console.log(chalk.yellow(`  ⚠️  ${name}: chưa có email → bỏ qua Spring Boot`));
     }
@@ -166,7 +167,7 @@ async function start() {
   console.log(chalk.cyan('║       🕐 SUNO COOKIE SCHEDULER                       ║'));
   console.log(chalk.cyan('╠══════════════════════════════════════════════════════╣'));
   console.log(chalk.cyan(`║  Khởi động : ${now().padEnd(39)}║`));
-  console.log(chalk.cyan(`║  Chu kỳ   : Mỗi ${INTERVAL_MINUTES} phút (token sống 60p, đệm 10p) ║`));
+  console.log(chalk.cyan(`║  Chu kỳ   : Mỗi ${INTERVAL_MINUTES} phút (token sống 60p, đệm 15p) ║`));
   console.log(chalk.cyan(`║  Chế độ   : ${HEADLESS ? 'Headless (ẩn Chrome)' : 'Hiện Chrome   '}${''.padEnd(HEADLESS ? 20 : 21)}║`));
   console.log(chalk.cyan('╚══════════════════════════════════════════════════════╝\n'));
 
