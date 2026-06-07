@@ -172,9 +172,26 @@ async function fetchCookiesForAccount(profileName, headless = true) {
     // Thêm 2 giây để đảm bảo Clerk đã chạy xong việc refresh
     await page.waitForTimeout(3000);
 
+    // Chủ động gọi billing/info nếu chưa bắt được qua network interception
+    if (networkData.creditsLeft === null) {
+      try {
+        const billingJson = await page.evaluate(async () => {
+          const res = await fetch('https://studio-api.prod.suno.com/api/billing/info/', {
+            credentials: 'include',
+          });
+          return await res.json();
+        });
+        if (billingJson && typeof billingJson.total_credits_left !== 'undefined') {
+          networkData.creditsLeft = billingJson.total_credits_left;
+          console.log(`  💰 Bắt được số dư hiện tại: ${networkData.creditsLeft} credits`);
+        }
+      } catch (_) {}
+    }
+
     // Lấy tất cả Cookie từ TẤT CẢ domain (không giới hạn URL)
     // __client có thể ở suno.com hoặc auth.suno.com
     const allCookies = await context.cookies();
+
 
     // Tách các cookie quan trọng
     const cookieMap = {};
