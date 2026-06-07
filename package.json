@@ -8,6 +8,7 @@
     "scheduler": "node src/scheduler.js",
     "scheduler:bg": "start /B node src/scheduler.js > logs/scheduler.log 2>&1",
     "add-account": "node src/add-account.js",
+    "relogin": "node src/relogin.js",
     "set-email": "node src/set-email.js",
     "update:all": "node src/update-all.js",
     "fetch:all": "node src/update-all.js",
