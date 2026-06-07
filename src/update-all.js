@@ -24,6 +24,7 @@ const { pushCookieToSpringBoot } = require('./lib/spring-push');
 const { sendTelegram, buildSummaryMessage } = require('./lib/telegram');
 
 const HEADLESS = process.env.HEADLESS !== 'false';
+const TARGET   = process.argv[2] || null; // VD: node src/update-all.js tk_1
 
 async function main() {
   const startTime = Date.now();
@@ -34,7 +35,7 @@ async function main() {
   console.log(chalk.cyan(`║  ⏰ ${new Date().toLocaleString('vi-VN').padEnd(43)}║`));
   console.log(chalk.cyan('╚══════════════════════════════════════════════════╝\n'));
 
-  const accounts = await getAccounts();
+  let accounts = await getAccounts();
 
   if (accounts.length === 0) {
     console.log(chalk.yellow('⚠️  Chưa có tài khoản nào! Chạy "npm run add-account" để thêm.\n'));
@@ -42,7 +43,17 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(chalk.white(`📋 Tìm thấy ${chalk.cyan(accounts.length)} tài khoản\n`));
+  // Lọc 1 tài khoản nếu có truyền tên
+  if (TARGET) {
+    accounts = accounts.filter(a => a.name === TARGET);
+    if (accounts.length === 0) {
+      console.log(chalk.red(`❌ Không tìm thấy tài khoản: "${TARGET}"\n`));
+      process.exit(1);
+    }
+    console.log(chalk.yellow(`🎯 Chỉ update: ${chalk.cyan(TARGET)}\n`));
+  } else {
+    console.log(chalk.white(`📋 Tìm thấy ${chalk.cyan(accounts.length)} tài khoản\n`));
+  }
 
   const results = [];
 
