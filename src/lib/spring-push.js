@@ -11,9 +11,10 @@ const ADMIN_PASSWORD = process.env.SPRING_BOOT_ADMIN_PASSWORD || '1977vlogsA@';
  *
  * @param {string} email - Email của tài khoản Suno
  * @param {string} cookie - Chuỗi cookie mới
+ * @param {number|null} creditsLeft - Số dư (nếu lấy được)
  * @returns {Promise<boolean>} - true nếu thành công
  */
-async function pushCookieToSpringBoot(email, cookie) {
+async function pushCookieToSpringBoot(email, cookie, creditsLeft = null) {
   if (!email) {
     console.log('  ⚠️  Tài khoản này chưa có email, bỏ qua push lên Spring Boot.');
     return false;
@@ -27,6 +28,10 @@ async function pushCookieToSpringBoot(email, cookie) {
     email: email,
     cookie: cookie,
   });
+
+  if (creditsLeft !== null) {
+    formBody.append('creditsLeft', creditsLeft);
+  }
 
   const MAX_RETRY = 3;
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
@@ -67,7 +72,7 @@ async function pushAllCookiesToSpringBoot(accountList) {
   const results = [];
 
   for (const acc of accountList) {
-    const success = await pushCookieToSpringBoot(acc.email, acc.cookie);
+    const success = await pushCookieToSpringBoot(acc.email, acc.cookie, acc.creditsLeft);
     results.push({ email: acc.email, name: acc.name, success });
 
     if (success) {

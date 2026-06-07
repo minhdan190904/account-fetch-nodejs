@@ -25,6 +25,7 @@ function setupNetworkInterception(page) {
   const capturedData = {
     clientApiVersion: null,
     clerkSessionToken: null,
+    creditsLeft: null, // Thêm credits_left
     sunoApiHeaders: {},
     capturedRequests: [],
   };
@@ -68,6 +69,19 @@ function setupNetworkInterception(page) {
           timestamp: new Date().toISOString(),
         });
       }
+    }
+  });
+
+  page.on('response', async (response) => {
+    const url = response.url();
+    if (url.includes('api/billing/info')) {
+      try {
+        const json = await response.json();
+        if (json && typeof json.total_credits_left !== 'undefined') {
+          capturedData.creditsLeft = json.total_credits_left;
+          console.log(`  💰 Bắt được số dư hiện tại: ${capturedData.creditsLeft} credits`);
+        }
+      } catch (_) {}
     }
   });
 
@@ -214,6 +228,7 @@ async function fetchCookiesForAccount(profileName, headless = true) {
       clientToken: clientCookie?.value || null,  // __client - Refresh Token (sống 1 năm)
       clientApiVersion: clientApiVersion || 'unknown',
       clerkSessionToken: clerkToken || null,
+      creditsLeft: networkData.creditsLeft, // Trả về credit
       cookieString,
       allCookies: cookieMap,
       capturedApiHeaders: networkData.sunoApiHeaders,
@@ -304,6 +319,7 @@ async function manualLoginAndFetch(profileName) {
       clientToken: clientCookie?.value || null,
       clientApiVersion: clientApiVersion || 'unknown',
       clerkSessionToken: networkData.clerkSessionToken || null,
+      creditsLeft: networkData.creditsLeft, // Trả về credit
       cookieString,
       allCookies: cookieMap,
       capturedApiHeaders: networkData.sunoApiHeaders,

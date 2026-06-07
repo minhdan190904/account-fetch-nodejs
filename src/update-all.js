@@ -95,7 +95,7 @@ async function main() {
       } else {
         // Dùng cookieString (chuỗi đầy đủ) nếu có, nếu không thì dùng session
         const cookieToSend = cookieData.cookieString || cookieData.session;
-        const springOk = await pushCookieToSpringBoot(email, cookieToSend);
+        const springOk = await pushCookieToSpringBoot(email, cookieToSend, cookieData.creditsLeft);
         result.springBootUpdated = springOk;
 
         if (springOk) {
