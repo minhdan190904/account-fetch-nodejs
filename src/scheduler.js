@@ -150,10 +150,23 @@ async function runFetchCycle() {
   console.log(chalk.cyan(`  ⏰ Lần tiếp theo: ${nextRunTime()}`));
   console.log(chalk.cyan(`${'─'.repeat(56)}\n`));
 
-  // Telegram chỉ báo khi có lỗi (tránh spam)
+  // Telegram: luôn gửi tóm tắt sau mỗi chu kỳ
   if (failCount > 0) {
     const summary = { total: accounts.length, success: successCount, fail: failCount };
     await sendTelegram(buildSummaryMessage(results, summary)).catch(() => {});
+  } else {
+    // Thành công toàn bộ → gửi tóm tắt nhẹ kèm credits
+    const lines = results
+      .filter(r => r.success)
+      .map(r => {
+        const credits = r.data?.creditsLeft !== null && r.data?.creditsLeft !== undefined
+          ? ` — ${r.data.creditsLeft} credits`
+          : '';
+        return `• ${r.name}${credits}`;
+      })
+      .join('\n');
+    const msg = `✅ <b>Cập nhật cookie thành công!</b>\n${lines}\n⏰ Lần tiếp: ${nextRunTime()}`;
+    await sendTelegram(msg).catch(() => {});
   }
 
   isRunning = false;
